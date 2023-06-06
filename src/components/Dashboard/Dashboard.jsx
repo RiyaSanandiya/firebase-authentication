@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
-// import Navbar from '../Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import { styled } from '@mui/material/styles';
 // import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -21,7 +21,7 @@ const Dashboard = () => {
         <Sidebar />
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          {/* <Navbar /> */}
+          <Navbar />
         </Grid>
         <Grid item xs={4}>
           <Item>xs=4</Item>
