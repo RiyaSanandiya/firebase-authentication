@@ -1,0 +1,40 @@
+import { Container, Row, Col } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Phonesignup from './components/Phonesignup';
+import ProtectedRoute from "./components/ProtectedRoute";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
+import Dashboard from "./components/Dashboard/Dashboard";
+
+function App() {
+  return (
+    <Container style={{ width: "400px" }}>
+      <Row>
+        <Col>
+          <UserAuthContextProvider>
+            <Routes>
+              <Route
+                path="/home"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+               < Route path="/dashboard" element={<Dashboard/>}   />
+               <Route path="/login" element={<Login />} />
+             
+               <Route path="/phonesignup" element={<Phonesignup />} />
+               <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </UserAuthContextProvider>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+export default App;
